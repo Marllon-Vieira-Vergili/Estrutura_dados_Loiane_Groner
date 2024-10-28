@@ -75,6 +75,28 @@ public class Vetor {
         }
 
     }
+
+    /*Método para verificar se o elemento existe no vetor,
+    utilizando o método boolean
+
+     */
+
+
+    public boolean busca(String elemento){
+        //Para buscar, vamos iterar até o tamanho real do vetor
+        //Mesmo nós sabemos, que tem muito mais espaço disponível
+        for (int i = 0; i < this.tamanho; i++){
+
+            /*
+            Se a posição do vetor que é elementos de i for igual a do elemento que estamos procurando
+             */
+
+            if(this.elementos[i].equalsIgnoreCase(elemento)){
+                return true;
+            }
+        }
+        return false;
+    }
     
     
 //Método para retornar o tamanho
