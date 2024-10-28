@@ -56,6 +56,25 @@ public class Vetor {
         }
         return false;
     }
+
+    //Método para obter um elemento de uma determinada posição
+
+    /*
+    Mas.. se o usuário buscar algum elemento em um campo
+    que nao tem nenhum dado, necessitamos fazer um tratamento.
+
+
+     */
+    public String busca(int posicao){
+        //se a posicao >-= 0 e posicao for menor que o tamanho, negando ela
+        if (!(posicao >= 0 && posicao < tamanho)){
+            throw new IllegalArgumentException("Você digitou uma posição invalida!");
+
+        } else{
+            return this.elementos[posicao];
+        }
+
+    }
     
     
 //Método para retornar o tamanho
