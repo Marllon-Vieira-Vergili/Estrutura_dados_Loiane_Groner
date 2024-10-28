@@ -11,5 +11,7 @@ public class Principal {
         vetor.adiciona("elemento 2");
 
 
+        System.out.println(vetor.tamanho());
+        System.out.println(vetor.toString());
     }
 }

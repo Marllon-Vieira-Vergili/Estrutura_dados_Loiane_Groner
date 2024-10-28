@@ -33,6 +33,8 @@ Um vetor armanzena uma sequeência de valores onde todos
 são do mesmo tipo
  */
 
+import java.util.Arrays;
+
 public class Vetor {
 
     private String[] elementos;
@@ -54,6 +56,39 @@ public class Vetor {
         }
         return false;
     }
+    
+    
+//Método para retornar o tamanho
+    public int tamanho(){
+        return this.tamanho;
+    }
+
+    
+    /*
+    Vamos fazer um toString formadado, para aparecer
+    apenas os campos preenchidos
+     */
+    @Override
+    public String toString() {
+
+        StringBuilder s = new StringBuilder();
+        s.append("[");
+
+
+        for (int i = 0; i < this.tamanho-1; i++){
+            s.append(this.elementos[i]);
+            s.append(", ");
+        }
+
+        if (this.tamanho > 0){
+            s.append(this.elementos[this.tamanho-1]);
+        }
+        s.append("]");
+
+                return s.toString();
+    }
+
+
 }
 
 //Ou podemos verificar se irá passar o limite do vetor, dessa forma ao inves de booleano
