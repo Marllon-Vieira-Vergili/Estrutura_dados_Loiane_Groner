@@ -49,6 +49,10 @@ public class Vetor {
 
     public boolean adiciona(String elemento) throws Exception {
 
+
+        //se precisar, esse método vai aumentar a capacidade, chamando o metodo aumentacapacidade
+        this.aumentaCapacidade();
+
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
@@ -62,7 +66,7 @@ public class Vetor {
     posição do vetor.
 
      */
-    //Vou passar no método adiciona, uma posicao, e um elemento
+    //Vou passar no método adiciona, um parametro que vai receber uma posicao, e um elemento
 
     public boolean adiciona(int posicao, String elemento){
 
@@ -70,6 +74,10 @@ public class Vetor {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Você digitou uma posição invalida!");
         }
+
+        //se precisar, esse método vai aumentar a capacidade, chamando o método aumentacapacidade
+        this.aumentaCapacidade();
+
         //Vamos focar na lógica agora, para criar o algoritmo de mover os elementos
 
         //o nosso for, vai começar iterando o i, até o tamanho, o i vai ser maior ou igual a posição, e vamos decrementa
@@ -84,6 +92,27 @@ public class Vetor {
         return true;
     }
 
+
+    //Método para aumentar capacidade do vetor, sem passar nenhum parametro
+
+    private void aumentaCapacidade(){
+        /*
+        Como iremos adicionar a capacidade?
+        sempre que o tamanho do vetor, for igual ao length do vetor, que é a capacidade que o vetor tem
+
+         */
+
+        if (this.tamanho == this.elementos.length){
+            //iremos criar outro vetor, do tipo string
+            String [] elementosNovos = new String[this.elementos.length  * 2];
+            for (int i=0; i < elementos.length; i++){
+                elementosNovos[i] = this.elementos[i];
+            }
+            //atribuindo o novo vetor, ao vetor
+            this.elementos = elementosNovos;
+        }
+
+    }
 
 
 
