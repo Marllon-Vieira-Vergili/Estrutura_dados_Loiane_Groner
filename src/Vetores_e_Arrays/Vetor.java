@@ -57,6 +57,36 @@ public class Vetor {
         return false;
     }
 
+    /*Vamos fazer um Overload, ou seja, sobrecarregar o método adiciona
+    para que possamos inserir algum elemento, em qualquer
+    posição do vetor.
+
+     */
+    //Vou passar no método adiciona, uma posicao, e um elemento
+
+    public boolean adiciona(int posicao, String elemento){
+
+        //Ja vamos aproveitar o algoritmo do método de busca abaixo
+        if (!(posicao >= 0 && posicao < tamanho)) {
+            throw new IllegalArgumentException("Você digitou uma posição invalida!");
+        }
+        //Vamos focar na lógica agora, para criar o algoritmo de mover os elementos
+
+        //o nosso for, vai começar iterando o i, até o tamanho, o i vai ser maior ou igual a posição, e vamos decrementa
+        //Mover todos os elementos
+        for (int i = this.tamanho - 1; i >= posicao; i--){
+                this.elementos[i + 1] = this.elementos[i];
+        }
+        this.elementos[posicao] = elemento;
+        this.tamanho++;
+
+
+        return true;
+    }
+
+
+
+
     //Método para obter um elemento de uma determinada posição
 
     /*
