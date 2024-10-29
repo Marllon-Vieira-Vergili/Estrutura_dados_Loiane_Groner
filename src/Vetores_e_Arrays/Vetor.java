@@ -81,7 +81,7 @@ public class Vetor {
         //Vamos focar na lógica agora, para criar o algoritmo de mover os elementos
 
         //o nosso for, vai começar iterando o i, até o tamanho, o i vai ser maior ou igual a posição, e vamos decrementa
-        //Mover todos os elementos
+        //Mover (empurrar) todos os elementos
         for (int i = this.tamanho - 1; i >= posicao; i--){
                 this.elementos[i + 1] = this.elementos[i];
         }
@@ -91,6 +91,42 @@ public class Vetor {
 
         return true;
     }
+
+//Vamos fazer o método para remover algum elemento do VETOR!
+
+    /*
+    Como vamos remover um elemento de uma posição, ele não precisa retornar nada
+    e vamos inserir o parametro da posicao do vetor
+     */
+
+
+    //B D E F F -> posição a ser removida é 1 (G)
+    //0 1 2 3 4 -> tamanho é 5
+    // vetor[1] = vetor[2]
+    // vetor[2] = vetor[3]
+    // vetor[3] = vetor[4]
+    public void remove(int posicao){
+        //Ja vamos aproveitar o algoritmo do método de busca abaixo
+        if (!(posicao >= 0 && posicao < tamanho)) {
+            throw new IllegalArgumentException("Você digitou uma posição invalida!");
+        }
+        //Vamos fazer um for, para "Empurrar" os elementos, como se fosse no diagrama visual
+        /*
+        Os nossos elemento, vai receber a posicao como parametro, i vai ser menor que o
+        tamanho menos 1, e depois vamos iterar com ++
+         */
+        for (int i = posicao; i< this.tamanho-1;i++){
+            /*
+            Os nossos elementos vai receber alguma outra posição
+            também do vetor de elementos, da posição i, e vai adicionar mais 1
+             do caso i + 1
+
+             */
+            this.elementos[i] = this.elementos[i + 1];
+        }
+        this.tamanho--;
+    }
+
 
 
     //Método para aumentar capacidade do vetor, sem passar nenhum parametro
@@ -190,6 +226,23 @@ public class Vetor {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Ou podemos verificar se irá passar o limite do vetor, dessa forma ao inves de booleano
 

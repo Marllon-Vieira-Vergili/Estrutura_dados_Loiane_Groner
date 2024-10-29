@@ -15,6 +15,9 @@ public class Principal {
         vetor.adiciona("G");
         vetor.adiciona("H");
 
+
+        vetor.remove(3);
+        vetor.busca("E");
         System.out.println(vetor);
 
 
