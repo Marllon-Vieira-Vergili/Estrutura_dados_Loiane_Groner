@@ -16,7 +16,7 @@ public class Aula09 {
         vetor.adiciona("H");
 
 
-        vetor.remove(1);
+        vetor.remove(2);
         System.out.println(vetor);
 
     }
