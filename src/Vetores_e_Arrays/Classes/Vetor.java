@@ -1,4 +1,4 @@
-package Vetores_e_Arrays;
+package Vetores_e_Arrays.Classes;
 
 /*
 
@@ -32,8 +32,6 @@ simples que existe.
 Um vetor armanzena uma sequeência de valores onde todos
 são do mesmo tipo
  */
-
-import java.util.Arrays;
 
 public class Vetor {
 

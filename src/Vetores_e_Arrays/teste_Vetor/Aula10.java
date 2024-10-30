@@ -1,7 +1,8 @@
 package Vetores_e_Arrays.teste_Vetor;
 
 
-import Vetores_e_Arrays.VetorObjetos;
+import Vetores_e_Arrays.Classes.Contato;
+import Vetores_e_Arrays.Classes.VetorObjetos;
 
 public class Aula10 {
     public static void main(String[] args) throws Exception {

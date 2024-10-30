@@ -1,4 +1,4 @@
-package Vetores_e_Arrays.teste_Vetor;
+package Vetores_e_Arrays.Classes;
 
 import java.util.Objects;
 

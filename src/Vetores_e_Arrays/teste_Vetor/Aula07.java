@@ -1,6 +1,6 @@
 package Vetores_e_Arrays.teste_Vetor;
 
-import Vetores_e_Arrays.Vetor;
+import Vetores_e_Arrays.Classes.Vetor;
 
 public class Aula07 {
     public static void main(String[] args) throws Exception {

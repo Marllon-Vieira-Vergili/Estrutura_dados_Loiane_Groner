@@ -1,8 +1,6 @@
 package Vetores_e_Arrays.teste_Vetor;
 
-import Vetores_e_Arrays.Vetor;
-
-import java.util.Vector;
+import Vetores_e_Arrays.Classes.Vetor;
 
 public class Aula03 {
     public static void main(String[] args) throws Exception {

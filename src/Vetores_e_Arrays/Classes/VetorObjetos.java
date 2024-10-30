@@ -1,4 +1,4 @@
-package Vetores_e_Arrays;
+package Vetores_e_Arrays.Classes;
 
 /*
 
