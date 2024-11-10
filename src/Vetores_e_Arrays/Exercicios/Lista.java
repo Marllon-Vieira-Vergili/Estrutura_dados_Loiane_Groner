@@ -1,4 +1,4 @@
-package Vetores_e_Arrays.Classes;
+package Vetores_e_Arrays.Exercicios;
 
 /*
 
@@ -36,7 +36,7 @@ são do mesmo tipo
 import java.lang.reflect.Array;
 
 //Agora a classe Lista é um tipo Genérico, ou seja, podemos escolher o tipo de dados que quisermos para instanciarmos!
-public class Lista <T> {
+public class Lista<T> {
 
     private T[] elementos;
     private int tamanho = 0;
@@ -135,6 +135,29 @@ public class Lista <T> {
         this.tamanho--;
     }
 
+    public void remove(T elemento){
+        //vamos aproveitar o algoritmo do método de busca
+        int pos = this.busca(elemento);
+        //se o atributo pos retornar -1, sinal que nao encontrou.. se a posicao retornar maior que 1, encontrou elemento
+        if (pos >  - 1 ){
+            this.remove(pos);
+        }
+    }
+
+    
+    //Método para limpar todos os elementos do vetor
+    
+    public void limpar(){
+        // Opção 1
+        this.elementos = (T[]) new Object[this.elementos.length];
+        //Opção 2
+        this.tamanho = 0;
+        //Opção 3
+        for (int i = 0; i < this.tamanho; i++){
+            this.elementos[i] = null;
+        }
+        this.tamanho = 0;
+    }
 
 
     //Método para aumentar capacidade do vetor, sem passar nenhum parametro
@@ -168,6 +191,15 @@ public class Lista <T> {
 
 
      */
+
+
+    //Criando método obter posicao
+    public T obtem(int posicao) {
+        return this.busca(posicao);
+    }
+
+
+
     public T busca(int posicao){
         //se a posicao >-= 0 e posicao for menor que o tamanho, negando ela
         if (!(posicao >= 0 && posicao < tamanho)){
@@ -199,6 +231,53 @@ public class Lista <T> {
             }
         }
         return -1;
+    }
+
+
+    //Implementando método último índice
+
+    public int ultimoIndice(T elemento){
+
+        int ultimaPos = -1;
+        //vamos iterar ao contrário no for, de trás para frente
+
+        //tamanho -1, pois nosso vetor vai de 0 até tantos, sem verficar o tamanho
+        for (int i  = this.tamanho - 1; i >= 0; i--){
+            if (this.elementos[i].equals(elemento)){
+               return i;
+            }
+
+        /*
+        esse iria percorrer todo o array, do começo ao fim,
+        imagina se tivessemos uns 100 mil elementos no vetor
+        ele iria percorrer todo o vetor pra achar o último índice?
+
+        for (int i  = 0; i < this.tamanho; i++){
+            if (this.elementos[i].equals(elemento)){
+                ultimaPos = i;
+            }
+            */
+
+        }
+
+        //se o elemento não existir, retornar -1;
+        return ultimaPos;
+    }
+
+
+
+
+
+    //Implementando o método Contém
+    public boolean contem (T elemento){
+        /*
+        int pos = busca(elemento);
+        if (pos > -1){
+            return true;
+        }
+        return false;*/
+        return busca(elemento) < -1;
+        
     }
 
 
